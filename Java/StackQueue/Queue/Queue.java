@@ -1,6 +1,6 @@
 package StackQueue.Queue;
 
-public class Queue {
+public class Queue implements StackQueue.Queue.Services.Queue {
 
     private int front = -1, rear = -1, queueSize = 5;
     private int[] queue;
@@ -11,14 +11,16 @@ public class Queue {
         this.queue = new int[this.queueSize];
     }
 
+    @Override
     public boolean isFull(){
         return (this.front == 0 && this.rear==this.queueSize-1);
     }
 
+    @Override
     public boolean isEmpty(){
         return (this.front > this.rear || (this.rear == -1 && this.front==-1));
     }
-
+    @Override
     public void enqueue(int value){
         if(isFull()){
             System.out.println("The Queue is full, no room for new values!!! :(");
@@ -31,6 +33,7 @@ public class Queue {
         System.out.println("Value entered successfully in the queue :) -> "+ this.queue[this.rear]);
     }
 
+    @Override
     public void dequeue(){
         if (isEmpty()) {
             System.out.println("The Queue is Empty, nothing to remove!!! :(");
@@ -42,6 +45,7 @@ public class Queue {
         }
     }
 
+    @Override
     public void peek() {
         if (isEmpty()) {
             System.out.println("The Queue is Empty, nothing to peek on!!! :(");
@@ -50,6 +54,7 @@ public class Queue {
         System.out.println("The latest value entered in the queue is: "+this.queue[this.rear]);
     }
 
+    @Override
     public void displayAll() {
         if (isEmpty()) {
             System.out.println("The Queue is Empty, nothing to display!!! :(");

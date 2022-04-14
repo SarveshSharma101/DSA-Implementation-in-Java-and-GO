@@ -10,16 +10,26 @@ public class PlayWithQueue implements DsaRunner {
     private Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) { new PlayWithQueue().run(); }
+
+    public StackQueue.Queue.Services.Queue getQueue(int queueSize, int choice){
+        if(choice == 1)
+            return new Queue(queueSize);
+        else
+            return new CircularQueue(queueSize);
+    }
+
     @Override
     public void run() {
-        Queue queue;
+
         System.out.println("Enter the size of Queue, enter 0 to select the default size i.e 5: ");
         int queueSize = scanner.nextInt();
-        queue = new Queue(queueSize);
+        System.out.println("1. Normal Queue\n2.Circular Queue\n Select the queue you want: ");
+        int choice = scanner.nextInt();
+        StackQueue.Queue.Services.Queue queue = getQueue(queueSize, choice);
 
         while (true) {
             System.out.print("\nChoose the operation to perform on Queue.\n1.Is Full?\n2.Is Empty?\n3.Peek\n4.Enqueue\n5.Dequeue\n6.Display All\n7.Exit");
-            int choice = scanner.nextInt();
+            choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
