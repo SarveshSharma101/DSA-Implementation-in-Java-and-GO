@@ -2,18 +2,27 @@ package main
 
 import (
 	services "DSA/GO-Lang/StackQueue/Queue/Services"
+	servicesImp "DSA/GO-Lang/StackQueue/Queue/Services/impl"
 	"fmt"
 	"os"
 )
 
-var queue services.Queue
+var queue services.Queues
 
 func main() {
 	var queueSize int
 	fmt.Printf("Enter the size if the queue you want, enter 0 to set the size to default i.e 5: ")
 	fmt.Scan(&queueSize)
 
-	queue = services.IntiQueue(queueSize)
+	fmt.Println("1. Circular Queue\n2. Queue\nChoose the queue you want: ")
+	var choice int
+	fmt.Scan(&choice)
+	if choice == 1 {
+		queue = servicesImp.InitCQueue(queueSize)
+	} else {
+		queue = servicesImp.InitQueue(queueSize)
+	}
+
 	run()
 }
 
@@ -25,28 +34,28 @@ func run() {
 
 		switch choice {
 		case 1:
-			if queue.IsFull(&queue) {
+			if queue.IsFull() {
 				fmt.Println("Queue is Full")
 			} else {
 				fmt.Println("Queue is Not Full")
 			}
 		case 2:
-			if queue.IsEmpty(&queue) {
+			if queue.IsEmpty() {
 				fmt.Println("Queue is Empty")
 			} else {
 				fmt.Println("Queue is Not Empty")
 			}
 		case 3:
-			queue.Peek(&queue)
+			queue.Peek()
 		case 4:
 			var value int
 			fmt.Println("Enter the value to enqueue in the queue: ")
 			fmt.Scan(&value)
-			queue.Enqueue(&queue, value)
+			queue.Enqueue(value)
 		case 5:
-			queue.Dequeue(&queue)
+			queue.Dequeue()
 		case 6:
-			queue.DisplayAll(&queue)
+			queue.DisplayAll()
 		case 7:
 			os.Exit(0)
 		}
