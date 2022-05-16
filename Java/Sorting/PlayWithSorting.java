@@ -2,6 +2,7 @@ package Sorting;
 
 import Services.DsaRunner;
 import Sorting.Services.Impl.BubbleSort;
+import Sorting.Services.Impl.MergeSort;
 import Sorting.Services.Impl.QuickSort;
 import Sorting.Services.Sort;
 
@@ -27,6 +28,7 @@ public class PlayWithSorting implements DsaRunner {
         value = scanner.nextInt();
         if (value == 1) sort = new BubbleSort();
         else if (value == 2) sort = new QuickSort();
+        else sort = new MergeSort();
 
         System.out.println("Enter the values which needs to be entered in array: ");
         for (int i=0; i<size; i++) {
@@ -35,7 +37,7 @@ public class PlayWithSorting implements DsaRunner {
             array[i] = value;
         }
 
-        array = sort.sort(array,false);
+        sort.sort(array,false);
         Arrays.stream(array).forEach(i -> System.out.println("--->"+i));
     }
 }
