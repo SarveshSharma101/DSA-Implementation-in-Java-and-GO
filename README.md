@@ -17,3 +17,4 @@ This repository has common DSA topics like Stack/Queue, LinkedList, Seaching/Sor
 ### Sorting
 - Bubble Sort
 - Quick Sort
+- Merge Sort
