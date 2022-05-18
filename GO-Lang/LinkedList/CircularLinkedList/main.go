@@ -15,6 +15,7 @@ func main() {
 func run() {
 
 	for {
+		fmt.Println("-->", head)
 		fmt.Printf("1.%s\n2.%s\n3.%s\n4.%s\n5.%s\n6.%s\n7.%s\n8.%s\n9 Reverse Traverse\n10.Exit\n%s\n", "Traverse", "InsertAtBeginning", "InsertAtEnd", "InsertAtIndex", "DeleteAtBeginning", "DeleteAtEnd", "DeleteAtIndex", "Search", "Choose any one of the option: ")
 		var choice int
 		fmt.Scan(&choice)
