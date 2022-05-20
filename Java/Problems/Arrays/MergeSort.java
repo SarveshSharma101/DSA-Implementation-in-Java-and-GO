@@ -8,7 +8,7 @@ public class MergeSort {
         int i = low, k = low;
         int j = mid+1;
 
-        int[] C = new int[100];
+        int[] C = new int[arr.length+1];
         while (i<=mid && j<=high){
             if (arr[i]<=arr[j]){
                 C[k] = arr[i];
@@ -43,7 +43,9 @@ public class MergeSort {
             int mid = (low+high)/2;
             mergeSort(arr, low, mid);
             mergeSort(arr, mid+1, high);
-            merge(arr, low, mid, high);
+            if (arr[mid] > arr[mid + 1]){
+                merge(arr, low, mid, high);
+            }
         }
     }
 
