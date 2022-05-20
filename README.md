@@ -18,6 +18,7 @@ This repository has common DSA topics like Stack/Queue, LinkedList, Seaching/Sor
 - Bubble Sort
 - Quick Sort
 - Merge Sort
+- Insertion Sort
 
 ### Tree
-Binary Search tree
+- Binary Search tree
