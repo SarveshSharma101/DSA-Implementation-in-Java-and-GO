@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class QuickSort {
 
+    //Given an array, sort it using quicksort.
 
     public void QuickSort(int[] arr, int low, int high){
         if (low<high){
