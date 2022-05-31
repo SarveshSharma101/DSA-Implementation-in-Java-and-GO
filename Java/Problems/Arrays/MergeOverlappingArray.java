@@ -28,7 +28,7 @@ public class MergeOverlappingArray {
      * @return
      */
 
-    int[][] mergeIntervals(int[][] intervals) {
+        int[][] mergeIntervals(int[][] intervals) {
         List<int[]> iList = Arrays.stream(intervals).collect(Collectors.toList());
         while (true){
             boolean f = false;
@@ -68,23 +68,5 @@ public class MergeOverlappingArray {
             }
             System.out.println();
         }
-
-//        List<Integer> list = new ArrayList<>();
-//        list.add(10);
-//        list.add(20);
-//        list.add(30);
-//        list.add(40);
-//        list.add(50);
-//        list.add(60);
-//
-//        System.out.println(list);
-//
-//        list.remove(2);
-//
-//        System.out.println(list);
-//
-//        list.add(2, 50);
-//
-//        System.out.println(list);
     }
 }
