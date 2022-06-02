@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+/**
+ * Next Greater Permutation
+ *
+ * Given an array, rearrange it to its next greater permutation.
+ * Do it in-place with extra constant memory only.
+ * Do not use any library function for the next permutation.
+ */
+
 func checkIfAsc(A *[]int) bool {
 	for i, v := range *A {
 		if i == len(*A)-1 {
