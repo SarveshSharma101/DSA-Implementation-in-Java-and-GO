@@ -2,8 +2,23 @@ package Problems.Arrays;
 
 public class NextGreaterElementInSortedArray {
 
+
+    /**
+     * Next Greater Element In Sorted Array
+     * Easy
+     * 30 / 30
+     * Given a sorted array and a number key,
+     * find the smallest array element which is greater than the key.
+     *
+     * If the key is greater than or equal to the largest element then return the key itself.
+     *
+     * Expected Time Complexity: O(log n)
+     * @param arr
+     * @param key
+     * @return
+     */
+
     int getNextGreaterElement (int[] arr, int key) {
-        // add your logic here
         int C = key;
         if (key>=arr[arr.length-1]) return C;
         for (int i=0; i< arr.length; i++){
